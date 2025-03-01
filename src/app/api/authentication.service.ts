@@ -53,6 +53,7 @@ export class AuthenticationService extends ApiImplementation {
     
     public LogIn(emailAddress: string, password: string) {
         const body: AuthRequest = {
+            username: undefined,
             emailAddress,
             passwordSha512: password,
         }
@@ -66,5 +67,25 @@ export class AuthenticationService extends ApiImplementation {
                 
                 this.HandleAuthResponse(response);
             });
+    }
+
+    public Register(username: string, emailAddress: string, passwordSha512: string) {
+        const body: AuthRequest = {
+            username,
+            emailAddress,
+            passwordSha512: password,
+        }
+
+        this.http.post<AuthResponse>("/register", body)
+            .subscribe((response) => {
+                if (response == undefined) {
+                    console.warn("response was null?", response)
+                    return;
+                }
+                
+                this.HandleAuthResponse(response);
+            });
+
+        this.LogIn(emailAddress, password);
     }
 }

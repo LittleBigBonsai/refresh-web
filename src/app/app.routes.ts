@@ -70,6 +70,12 @@ export const routes: Routes = [
         data: {title: "Sign in"},
     },
     {
+        path: 'register',
+        // TODO: create a component
+        loadComponent: () => import('./pages/auth/.../...').then(x => x.),
+        data: {title: "Sign up"},
+    },
+    {
         path: 'contests',
         loadComponent: () => import('./pages/contest-listing/contest-listing.component').then(x => x.ContestListingComponent),
         data: {title: "Contests"},
