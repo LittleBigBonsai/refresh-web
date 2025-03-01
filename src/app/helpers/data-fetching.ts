@@ -1,7 +1,7 @@
 import {ImageLoaderConfig} from "@angular/common";
 
 export function getApiBaseUrl(): string {
-    return "https://lbp.littlebigrefresh.com/api/v3";
+    return "https://lbp.craftworld.network/api/v3";
 }
 
 export function getImageLink(hash: string): string {

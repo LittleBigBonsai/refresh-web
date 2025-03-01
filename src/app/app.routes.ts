@@ -71,8 +71,7 @@ export const routes: Routes = [
     },
     {
         path: 'register',
-        // TODO: create a component
-        loadComponent: () => import('./pages/auth/.../...').then(x => x.),
+        loadComponent: () => import('./pages/auth/signup/signup.component').then(x => x.SignupComponent),
         data: {title: "Sign up"},
     },
     {

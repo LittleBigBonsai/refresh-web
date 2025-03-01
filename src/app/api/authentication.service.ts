@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {TokenStorageService} from "./token-storage.service";
 import {ExtendedUser} from "./types/users/extended-user";
 import {AuthRequest} from "./types/auth/auth-request";
+import {RegistrationRequest} from "./types/auth/registration-request";
 import {AuthResponse} from "./types/auth/auth-response";
 import {BehaviorSubject} from "rxjs";
 
@@ -53,7 +54,6 @@ export class AuthenticationService extends ApiImplementation {
     
     public LogIn(emailAddress: string, password: string) {
         const body: AuthRequest = {
-            username: undefined,
             emailAddress,
             passwordSha512: password,
         }
@@ -70,10 +70,10 @@ export class AuthenticationService extends ApiImplementation {
     }
 
     public Register(username: string, emailAddress: string, passwordSha512: string) {
-        const body: AuthRequest = {
+        const body: RegistrationRequest = {
             username,
             emailAddress,
-            passwordSha512: password,
+            passwordSha512: passwordSha512,
         }
 
         this.http.post<AuthResponse>("/register", body)
@@ -82,10 +82,8 @@ export class AuthenticationService extends ApiImplementation {
                     console.warn("response was null?", response)
                     return;
                 }
-                
+
                 this.HandleAuthResponse(response);
             });
-
-        this.LogIn(emailAddress, password);
     }
 }

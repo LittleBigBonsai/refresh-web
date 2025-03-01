@@ -1,11 +1,11 @@
 <app-page-title></app-page-title>
 
 <app-form [form]="form" (submit)="submit()">
+    <app-textbox [icon]="faPerson" [form]="form" placeholder="sackboy123" ctrlName="username" label="Username" type="username"></app-textbox>
     <app-textbox [icon]="faEnvelope" [form]="form" placeholder="sackboy@lbp.me" ctrlName="emailAddress" label="Email Address" type="email"></app-textbox>
     <app-textbox [icon]="faKey" [form]="form" placeholder="•••••••••" ctrlName="password" label="Password" type="password"></app-textbox>
 
     <ng-container buttons>
-        <app-button-submit-form [form]="form" action="Log In"></app-button-submit-form>
+        <app-button-submit-form [form]="form" action="Sign Up"></app-button-submit-form>
     </ng-container>
-    Dont have an account? <a href="/register">Sign up</a>
 </app-form>
