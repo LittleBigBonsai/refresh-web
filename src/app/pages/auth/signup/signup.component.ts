@@ -6,7 +6,7 @@ import { FormComponent } from '../../../components/ui/form/form.component';
 import { ButtonSubmitFormComponent } from '../../../components/ui/form/button-submit-form.component';
 import { AuthenticationService } from '../../../api/authentication.service';
 import { sha512Async } from '../../../helpers/crypto';
-import {TextboxComponent} from "../../../components/ui/form/textbox.component";
+import { TextboxComponent } from "../../../components/ui/form/textbox.component";
 
 @Component({
     selector: 'app-register',

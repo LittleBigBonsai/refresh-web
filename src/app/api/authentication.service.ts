@@ -69,6 +69,13 @@ export class AuthenticationService extends ApiImplementation {
             });
     }
 
+    public LogOut() {
+        //TODO: Fix all of this later
+        //this.http.get("/logout", {}).subscribe();
+        this.tokenStorage.ClearStoredGameToken();
+        this.tokenStorage.ClearStoredUser();
+    }
+
     public Register(username: string, emailAddress: string, passwordSha512: string) {
         const body: RegistrationRequest = {
             username,

@@ -70,6 +70,11 @@ export const routes: Routes = [
         data: {title: "Sign in"},
     },
     {
+        path: 'logout',
+        loadComponent: () => import('./pages/auth/logout/logout.component').then(x => x.LogoutComponent),
+        data: {title: "Log out"},
+    },
+    {
         path: 'register',
         loadComponent: () => import('./pages/auth/signup/signup.component').then(x => x.SignupComponent),
         data: {title: "Sign up"},

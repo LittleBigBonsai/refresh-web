@@ -7,5 +7,10 @@
     <ng-container buttons>
         <app-button-submit-form [form]="form" action="Log In"></app-button-submit-form>
     </ng-container>
-    Dont have an account? <a href="/register">Sign up</a>
+    <span>
+        Dont have an account? 
+        <a class="underline hover:no-underline" ng-reflect-router-link="/register" title="Sign up." href="/register">
+            Sign up.
+        </a>
+    </span>
 </app-form>
